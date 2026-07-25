@@ -64,12 +64,12 @@
             animation: slideDown 0.6s ease-out;
         }
 
-        nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 2rem;
-        }
+            nav .container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1.5rem 2rem;
+            }
 
         .logo {
             font-family: 'Playfair Display', serif;
@@ -95,20 +95,20 @@
             transition: color 0.3s;
         }
 
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--accent), var(--accent-2));
-            transition: width 0.3s;
-        }
+            nav a::after {
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: linear-gradient(90deg, var(--accent), var(--accent-2));
+                transition: width 0.3s;
+            }
 
-        nav a:hover::after {
-            width: 100%;
-        }
+            nav a:hover::after {
+                width: 100%;
+            }
 
         /* Hero Section */
         .hero {
@@ -168,10 +168,10 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-        }
+            .btn-primary:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            }
 
         .btn-secondary {
             background: rgba(255, 255, 255, 0.2);
@@ -180,11 +180,11 @@
             backdrop-filter: blur(10px);
         }
 
-        .btn-secondary:hover {
-            background: white;
-            color: var(--accent);
-            transform: translateY(-3px);
-        }
+            .btn-secondary:hover {
+                background: white;
+                color: var(--accent);
+                transform: translateY(-3px);
+            }
 
         /* Sections */
         section {
@@ -209,17 +209,17 @@
             transform: translateX(-50%);
         }
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent), var(--accent-2));
-            border-radius: 2px;
-        }
+            .section-title::after {
+                content: '';
+                position: absolute;
+                bottom: -15px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100px;
+                height: 4px;
+                background: linear-gradient(90deg, var(--accent), var(--accent-2));
+                border-radius: 2px;
+            }
 
         /* About Section */
         .about-content {
@@ -234,23 +234,23 @@
             position: relative;
         }
 
-        .about-image::before {
-            content: '';
-            position: absolute;
-            top: -20px;
-            left: -20px;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--accent), var(--accent-2));
-            border-radius: 20px;
-            z-index: -1;
-        }
+            .about-image::before {
+                content: '';
+                position: absolute;
+                top: -20px;
+                left: -20px;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(135deg, var(--accent), var(--accent-2));
+                border-radius: 20px;
+                z-index: -1;
+            }
 
-        .about-image img {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-        }
+            .about-image img {
+                width: 100%;
+                border-radius: 20px;
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            }
 
         .about-text h3 {
             font-family: 'Playfair Display', serif;
@@ -280,10 +280,10 @@
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .skill-group:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-        }
+            .skill-group:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            }
 
         .skill-group-title {
             font-family: 'Playfair Display', serif;
@@ -296,10 +296,10 @@
             gap: 0.5rem;
         }
 
-        .skill-group-title::before {
-            content: '▸';
-            font-size: 1.5rem;
-        }
+            .skill-group-title::before {
+                content: '▸';
+                font-size: 1.5rem;
+            }
 
         .skill-items {
             display: flex;
@@ -329,20 +329,20 @@
             white-space: nowrap;
         }
 
-        .skill-level.advanced {
-            color: #1e7e4f;
-            background: rgba(46, 204, 113, 0.18);
-        }
+            .skill-level.advanced {
+                color: #1e7e4f;
+                background: rgba(46, 204, 113, 0.18);
+            }
 
-        .skill-level.good {
-            color: #b8860b;
-            background: rgba(241, 196, 15, 0.20);
-        }
+            .skill-level.good {
+                color: #b8860b;
+                background: rgba(241, 196, 15, 0.20);
+            }
 
-        .skill-level.basic {
-            color: #7a7a7a;
-            background: rgba(120, 120, 120, 0.14);
-        }
+            .skill-level.basic {
+                color: #7a7a7a;
+                background: rgba(120, 120, 120, 0.14);
+            }
 
         .skill-item::before {
             content: '•';
@@ -364,9 +364,9 @@
             display: inline-block;
         }
 
-        .skill-tag:hover {
-            transform: translateY(-3px) scale(1.05);
-        }
+            .skill-tag:hover {
+                transform: translateY(-3px) scale(1.05);
+            }
 
         /* Projects Grid */
         .projects-grid {
@@ -386,15 +386,26 @@
             animation-fill-mode: both;
         }
 
-        .project-card:nth-child(1) { animation-delay: 0.1s; }
-        .project-card:nth-child(2) { animation-delay: 0.2s; }
-        .project-card:nth-child(3) { animation-delay: 0.3s; }
-        .project-card:nth-child(4) { animation-delay: 0.4s; }
+            .project-card:nth-child(1) {
+                animation-delay: 0.1s;
+            }
 
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-        }
+            .project-card:nth-child(2) {
+                animation-delay: 0.2s;
+            }
+
+            .project-card:nth-child(3) {
+                animation-delay: 0.3s;
+            }
+
+            .project-card:nth-child(4) {
+                animation-delay: 0.4s;
+            }
+
+            .project-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            }
 
         .project-image {
             width: 100%;
@@ -408,20 +419,20 @@
             overflow: hidden;
         }
 
-        .project-image img,
-        .project-image video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s;
-        }
+            .project-image img,
+            .project-image video {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.4s;
+            }
 
-        .project-image iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            transition: transform 0.4s;
-        }
+            .project-image iframe {
+                width: 100%;
+                height: 100%;
+                border: none;
+                transition: transform 0.4s;
+            }
 
         .project-card:hover .project-image img,
         .project-card:hover .project-image video,
@@ -461,17 +472,17 @@
             z-index: 2;
         }
 
-        .video-facade::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.15);
-            transition: background 0.3s;
-        }
+            .video-facade::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background: rgba(0, 0, 0, 0.15);
+                transition: background 0.3s;
+            }
 
-        .video-facade:hover::before {
-            background: rgba(0, 0, 0, 0.3);
-        }
+            .video-facade:hover::before {
+                background: rgba(0, 0, 0, 0.3);
+            }
 
         .video-play {
             position: relative;
@@ -535,22 +546,41 @@
             font-size: 0.9rem;
         }
 
-        .project-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+            .project-link:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+            }
+
+            .project-link.secondary {
+                background: white;
+                color: var(--accent);
+                border: 2px solid var(--accent);
+                box-shadow: none;
+            }
+
+                .project-link.secondary:hover {
+                    background: var(--accent);
+                    color: white;
+                }
+
+        .private-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #7a7a7a;
+            background: rgba(120, 120, 120, 0.12);
+            border: 1px dashed rgba(120, 120, 120, 0.5);
+            cursor: default;
         }
 
-        .project-link.secondary {
-            background: white;
-            color: var(--accent);
-            border: 2px solid var(--accent);
-            box-shadow: none;
-        }
-
-        .project-link.secondary:hover {
-            background: var(--accent);
-            color: white;
-        }
+            .private-badge::before {
+                content: '🔒';
+                font-size: 0.9rem;
+            }
 
         .project-info {
             padding: 2rem;
@@ -559,13 +589,13 @@
             gap: 1rem;
         }
 
-        .project-info h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--primary);
-            line-height: 1.3;
-        }
+            .project-info h3 {
+                font-family: 'Playfair Display', serif;
+                font-size: 1.5rem;
+                margin-bottom: 0.5rem;
+                color: var(--primary);
+                line-height: 1.3;
+            }
 
         .project-role {
             display: inline-block;
@@ -597,23 +627,23 @@
             border-left: 3px solid var(--accent-2);
         }
 
-        .project-features::-webkit-scrollbar {
-            width: 6px;
-        }
+            .project-features::-webkit-scrollbar {
+                width: 6px;
+            }
 
-        .project-features::-webkit-scrollbar-track {
-            background: #e9ecef;
-            border-radius: 10px;
-        }
+            .project-features::-webkit-scrollbar-track {
+                background: #e9ecef;
+                border-radius: 10px;
+            }
 
-        .project-features::-webkit-scrollbar-thumb {
-            background: var(--accent-2);
-            border-radius: 10px;
-        }
+            .project-features::-webkit-scrollbar-thumb {
+                background: var(--accent-2);
+                border-radius: 10px;
+            }
 
-        .project-features::-webkit-scrollbar-thumb:hover {
-            background: var(--accent);
-        }
+                .project-features::-webkit-scrollbar-thumb:hover {
+                    background: var(--accent);
+                }
 
         .feature-title {
             font-weight: 600;
@@ -625,10 +655,10 @@
             gap: 0.5rem;
         }
 
-        .feature-title::before {
-            content: '⚡';
-            font-size: 1.1rem;
-        }
+            .feature-title::before {
+                content: '⚡';
+                font-size: 1.1rem;
+            }
 
         .feature-list {
             display: flex;
@@ -645,26 +675,26 @@
             transition: color 0.2s;
         }
 
-        .feature-item::before {
-            content: '▹';
-            position: absolute;
-            left: 0;
-            color: var(--accent-2);
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
+            .feature-item::before {
+                content: '▹';
+                position: absolute;
+                left: 0;
+                color: var(--accent-2);
+                font-weight: bold;
+                font-size: 1.2rem;
+            }
 
-        .feature-item:hover {
-            color: var(--text);
-        }
+            .feature-item:hover {
+                color: var(--text);
+            }
 
-        .feature-item strong {
-            display: block;
-            color: var(--text);
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 0.15rem;
-        }
+            .feature-item strong {
+                display: block;
+                color: var(--text);
+                font-weight: 600;
+                font-size: 0.9rem;
+                margin-bottom: 0.15rem;
+            }
 
         .feature-detail {
             display: block;
@@ -673,9 +703,9 @@
             color: var(--text-light);
         }
 
-        .feature-detail + .feature-detail {
-            margin-top: 0.25rem;
-        }
+            .feature-detail + .feature-detail {
+                margin-top: 0.25rem;
+            }
 
         .project-info > p {
             color: var(--text-light);
@@ -714,10 +744,10 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .education-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 18px 50px rgba(0, 0, 0, 0.12);
-        }
+            .education-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 18px 50px rgba(0, 0, 0, 0.12);
+            }
 
         .education-main {
             flex: 1 1 380px;
@@ -762,23 +792,23 @@
             background: rgba(78, 205, 196, 0.12);
         }
 
-        .education-gpa .gpa-label {
-            display: block;
-            font-size: 0.75rem;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--text-light);
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
+            .education-gpa .gpa-label {
+                display: block;
+                font-size: 0.75rem;
+                letter-spacing: 0.08em;
+                text-transform: uppercase;
+                color: var(--text-light);
+                font-weight: 600;
+                margin-bottom: 0.25rem;
+            }
 
-        .education-gpa .gpa-value {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            font-weight: 900;
-            color: var(--accent-2);
-            line-height: 1;
-        }
+            .education-gpa .gpa-value {
+                font-family: 'Playfair Display', serif;
+                font-size: 2rem;
+                font-weight: 900;
+                color: var(--accent-2);
+                line-height: 1;
+            }
 
         /* Contact Section */
         .contact-content {
@@ -787,11 +817,11 @@
             text-align: center;
         }
 
-        .contact-content p {
-            font-size: 1.2rem;
-            color: var(--text-light);
-            margin-bottom: 2rem;
-        }
+            .contact-content p {
+                font-size: 1.2rem;
+                color: var(--text-light);
+                margin-bottom: 2rem;
+            }
 
         .contact-details {
             display: flex;
@@ -816,16 +846,16 @@
             transition: transform 0.25s, box-shadow 0.25s, color 0.25s;
         }
 
-        .contact-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
-            color: var(--accent);
-        }
+            .contact-item:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+                color: var(--accent);
+            }
 
-        .contact-item svg {
-            flex-shrink: 0;
-            color: var(--accent-2);
-        }
+            .contact-item svg {
+                flex-shrink: 0;
+                color: var(--accent-2);
+            }
 
         .social-links {
             display: flex;
@@ -849,12 +879,12 @@
             transition: all 0.3s;
         }
 
-        .social-link:hover {
-            transform: translateY(-5px) scale(1.1);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            background: linear-gradient(135deg, var(--accent), var(--accent-2));
-            color: white;
-        }
+            .social-link:hover {
+                transform: translateY(-5px) scale(1.1);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+                background: linear-gradient(135deg, var(--accent), var(--accent-2));
+                color: white;
+            }
 
         /* Footer */
         footer {
@@ -871,6 +901,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -881,6 +912,7 @@
             from {
                 opacity: 0;
             }
+
             to {
                 opacity: 1;
             }
@@ -890,6 +922,7 @@
             from {
                 transform: translateY(-100%);
             }
+
             to {
                 transform: translateY(0);
             }
@@ -963,69 +996,69 @@
         <div class="container">
             <h2 class="section-title">about me</h2>
             <div class="about-content">
-               
-                </div>
-                <div class="about-text">
-                    <h3> Game and Application Developer </h3>
-                    <p>
-                        Game and application developer experienced in mobile and PC platforms, proficient in Unity and C#, with expertise in AI game systems, data analytics, 
-                        and real-time databases. Skilled collaborator with experience in team projects and indie development, 
-                        demonstrating strong problem-solving and communication abilities.
-                    </p>
-                    <p>
-                        Passionate about leveraging emerging technologies such as AI tools, cloud integration, and game analytics to create games that are engaging, challenging, and innovative. 
-                        Committed to developing experiences that combine fun gameplay with cutting-edge technology.
-                    </p>
-                    <div class="skills">
-                        <!-- Programming Group -->
-                        <div class="skill-group">
-                            <div class="skill-group-title">Programming</div>
-                            <div class="skill-items">
-                                <div class="skill-item"><span>C#</span><span class="skill-level advanced">Advanced</span></div>
-                                <div class="skill-item"><span>C++</span><span class="skill-level good">Good</span></div>
-                                <div class="skill-item"><span>HTML</span><span class="skill-level basic">Basic</span></div>
-                                <div class="skill-item"><span>CSS</span><span class="skill-level basic">Basic</span></div>
-                                <div class="skill-item"><span>JavaScript</span><span class="skill-level basic">Basic</span></div>
-                                <div class="skill-item"><span>Python</span><span class="skill-level basic">Good</span></div>
-                            </div>
+
+            </div>
+            <div class="about-text">
+                <h3> Game and Application Developer </h3>
+                <p>
+                    Game and application developer experienced in mobile and PC platforms, proficient in Unity and C#, with expertise in AI game systems, data analytics,
+                    and real-time databases. Skilled collaborator with experience in team projects and indie development,
+                    demonstrating strong problem-solving and communication abilities.
+                </p>
+                <p>
+                    Passionate about leveraging emerging technologies such as AI tools, cloud integration, and game analytics to create games that are engaging, challenging, and innovative.
+                    Committed to developing experiences that combine fun gameplay with cutting-edge technology.
+                </p>
+                <div class="skills">
+                    <!-- Programming Group -->
+                    <div class="skill-group">
+                        <div class="skill-group-title">Programming</div>
+                        <div class="skill-items">
+                            <div class="skill-item"><span>C#</span><span class="skill-level advanced">Advanced</span></div>
+                            <div class="skill-item"><span>C++</span><span class="skill-level good">Good</span></div>
+                            <div class="skill-item"><span>HTML</span><span class="skill-level basic">Basic</span></div>
+                            <div class="skill-item"><span>CSS</span><span class="skill-level basic">Basic</span></div>
+                            <div class="skill-item"><span>JavaScript</span><span class="skill-level basic">Basic</span></div>
+                            <div class="skill-item"><span>Python</span><span class="skill-level basic">Basic</span></div>
                         </div>
+                    </div>
 
 
-                        <!-- Engine Group -->
-                        <div class="skill-group">
-                            <div class="skill-group-title">Engine</div>
-                            <div class="skill-items">
-                                <div class="skill-item"><span>Unity</span><span class="skill-level advanced">Advanced</span></div>
-                                <div class="skill-item"><span>Unreal</span><span class="skill-level basic">Basic</span></div>
-                                <div class="skill-item"><span>Game Maker</span><span class="skill-level basic">Basic</span></div>
-                            </div>
+                    <!-- Engine Group -->
+                    <div class="skill-group">
+                        <div class="skill-group-title">Engine</div>
+                        <div class="skill-items">
+                            <div class="skill-item"><span>Unity</span><span class="skill-level advanced">Advanced</span></div>
+                            <div class="skill-item"><span>Unreal</span><span class="skill-level basic">Basic</span></div>
+                            <div class="skill-item"><span>Game Maker</span><span class="skill-level basic">Basic</span></div>
                         </div>
+                    </div>
 
 
-                        <!-- Tools Group -->
-                        <div class="skill-group">
-                            <div class="skill-group-title">Tools</div>
-                            <div class="skill-items">
-                                <div class="skill-item"><span>GitHub</span><span class="skill-level good">Good</span></div>
-                                <div class="skill-item"><span>Firebase</span><span class="skill-level good">Good</span></div>
-                                <div class="skill-item"><span>Photon Fusion</span><span class="skill-level basic">Basic</span></div>
-                                <div class="skill-item"><span>Unity Cloud</span><span class="skill-level basic">Basic</span></div>
-                            </div>
+                    <!-- Tools Group -->
+                    <div class="skill-group">
+                        <div class="skill-group-title">Tools</div>
+                        <div class="skill-items">
+                            <div class="skill-item"><span>GitHub</span><span class="skill-level good">Good</span></div>
+                            <div class="skill-item"><span>Firebase</span><span class="skill-level good">Good</span></div>
+                            <div class="skill-item"><span>Photon Fusion</span><span class="skill-level basic">Basic</span></div>
+                            <div class="skill-item"><span>Unity Cloud</span><span class="skill-level basic">Basic</span></div>
                         </div>
+                    </div>
 
-                        <!-- AI Tool Group -->
-                        <div class="skill-group">
-                            <div class="skill-group-title">AI Tool</div>
-                            <div class="skill-items">
-                                <div class="skill-item"><span>Claude</span><span class="skill-level good">Good</span></div>
-                                <div class="skill-item"><span>Chat GPT</span><span class="skill-level good">Good</span></div>
-                                <div class="skill-item"><span>Gemini</span><span class="skill-level good">Good</span></div>
-                                <div class="skill-item"><span>Copilot</span><span class="skill-level good">Good</span></div>
-                            </div>
+                    <!-- AI Tool Group -->
+                    <div class="skill-group">
+                        <div class="skill-group-title">AI Tool</div>
+                        <div class="skill-items">
+                            <div class="skill-item"><span>Claude</span><span class="skill-level good">Good</span></div>
+                            <div class="skill-item"><span>Chat GPT</span><span class="skill-level good">Good</span></div>
+                            <div class="skill-item"><span>Gemini</span><span class="skill-level good">Good</span></div>
+                            <div class="skill-item"><span>Copilot</span><span class="skill-level good">Good</span></div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
 
@@ -1033,22 +1066,22 @@
     <section id="projects" class="section-bg" style="padding-top: 2rem;">
         <div class="container">
             <h2 class="section-title">Projects</h2>
-          
+
             <div class="projects-grid">
                 <!-- ========== เกมที่ 1 ========== -->
                 <div class="project-card">
                     <div class="project-image">
-                       
+
                         <div class="video-facade" data-id="kUxF4z5Grqg" style="background-image:url(https://i.ytimg.com/vi/kUxF4z5Grqg/hqdefault.jpg);">
                             <button class="video-play" aria-label="Play video"></button>
                         </div>
-                      
+
                     </div>
                     <div class="project-info">
                         <h3>Ferris Adventure | 2025</h3>
                         <span class="project-role">👨‍💻 Programmer (Team project)</span>
                         <p class="project-description">Mobile Android online multiplayer RPG game</p>
-                        
+
                         <div class="project-features">
                             <div class="feature-title">What I did</div>
                             <div class="feature-list">
@@ -1076,7 +1109,11 @@
                                 </div>
                             </div>
                         </div>
-                       
+
+                        <div class="project-links">
+                            <span class="private-badge">Private Repo</span>
+                        </div>
+
                     </div>
                 </div>
 
@@ -1091,7 +1128,7 @@
                         <h3>Delivery Boy | 2024-2025</h3>
                         <span class="project-role">👨‍💻 Programmer (Team project)</span>
                         <p class="project-description">PC Side-Scroller 2D game</p>
-                        
+
                         <div class="project-features">
                             <div class="feature-title">What I did</div>
                             <div class="feature-list">
@@ -1100,10 +1137,11 @@
                                 <div class="feature-item">Camera Follow Player mechanics</div>
                             </div>
                         </div>
-                        
-                        
+
+
                         <div class="project-links">
-                            <a href="https://anuwat00.itch.io/delivery-boy" class="project-link" target="_blank">▶ เล่นเกม</a>
+                            <a href="https://anuwat00.itch.io/delivery-boy" class="project-link" target="_blank">▶ Play</a>
+                            <span class="private-badge">Private Repo</span>
                         </div>
                     </div>
                 </div>
@@ -1116,10 +1154,10 @@
                         </div>
                     </div>
                     <div class="project-info">
-                        <h3>RTS Game | 2024-2025</h3>
+                        <h3>Borders of Europe | 2024-2025</h3>
                         <span class="project-role">🎮 Solo project</span>
                         <p class="project-description">Real-Time Strategy game for PC with 3D graphics</p>
-                        
+
                         <div class="project-features">
                             <div class="feature-title">What I did</div>
                             <div class="feature-list">
@@ -1133,11 +1171,11 @@
                                 <div class="feature-item">Camera Controller</div>
                             </div>
                         </div>
-                        
-                        
+
+
                         <div class="project-links">
-                            <a href="https://anuwat00.itch.io/rtsprototype" class="project-link" target="_blank">▶ เล่นเกม</a>
-                            <a href="https://github.com/yourusername/game3" class="project-link secondary" target="_blank">GitHub</a>
+                            <a href="https://anuwat00.itch.io/rtsprototype" class="project-link" target="_blank">▶ Play</a>
+                            <a href="https://github.com/AnuBoss/rts_game" class="project-link secondary" target="_blank">GitHub</a>
                         </div>
                     </div>
                 </div>
@@ -1152,11 +1190,12 @@
                     <div class="project-info">
                         <h3>MyRPG</h3>
                         <span class="project-role">🎮 Solo project</span>
-                        
-                        
-                        
+                        <p class="project-description">Single-player RPG for PC, developed solo in Unity</p>
+
+
+
                         <div class="project-links">
-                            <a href="https://github.com/yourusername/game4" class="project-link secondary" target="_blank">GitHub</a>
+                            <a href="https://github.com/AnuBoss/rts_game" class="project-link secondary" target="_blank">GitHub</a>
                         </div>
                     </div>
                 </div>
@@ -1196,13 +1235,13 @@
                 <div class="contact-details">
                     <a href="tel:0971300276" class="contact-item">
                         <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.24.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z"/>
+                            <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.24.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z" />
                         </svg>
                         097-130-0276
                     </a>
                     <a href="mailto:anuwat.bo0603@gmail.com" class="contact-item">
                         <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4.24l-8 4.94-8-4.94V6l8 4.94L20 6v2.24z"/>
+                            <path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4.24l-8 4.94-8-4.94V6l8 4.94L20 6v2.24z" />
                         </svg>
                         anuwat.bo0603@gmail.com
                     </a>
@@ -1213,7 +1252,7 @@
                 <div class="social-links">
                     <a href="https://github.com/yourusername" class="social-link" target="_blank">
                         <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                         </svg>
                     </a>
                 </div>
@@ -1226,7 +1265,8 @@
         <p>&copy; 2024 Anuwat Surattanapram.</p>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script>
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1265,7 +1305,7 @@
         window.addEventListener('scroll', () => {
             let current = '';
             const sections = document.querySelectorAll('section[id]');
-            
+
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
                 const sectionHeight = section.clientHeight;
