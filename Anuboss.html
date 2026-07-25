@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Your Name - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2d3748;
+            --accent: #ff6b6b;
+            --accent-2: #4ecdc4;
+            --bg: #f7f9fc;
+            --text: #2d3748;
+            --text-light: #718096;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background: linear-gradient(135deg, #4a6572 0%, #5b7c8d 45%, #7096a0 100%);
+            background-attachment: fixed;
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .grain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.05;
+            z-index: 1000;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='4' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            animation: slideDown 0.6s ease-out;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 600;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 900;
+            color: white;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+            line-height: 1.1;
+        }
+
+        .hero h2 {
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--accent);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        /* Sections */
+        section {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        .section-bg {
+            background: var(--bg);
+            border-radius: 30px 30px 0 0;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            border-radius: 20px;
+            z-index: -1;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .about-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+
+        .about-text p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-group {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .skill-group:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .skill-group-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-group-title::before {
+            content: '▸';
+            font-size: 1.5rem;
+        }
+
+        .skill-items {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .skill-item {
+            color: var(--text);
+            padding: 0.4rem 0;
+            font-size: 0.95rem;
+            position: relative;
+            padding-left: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.6rem;
+        }
+
+        .skill-level {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            padding: 0.15rem 0.6rem;
+            border-radius: 12px;
+            white-space: nowrap;
+        }
+
+        .skill-level.advanced {
+            color: #1e7e4f;
+            background: rgba(46, 204, 113, 0.18);
+        }
+
+        .skill-level.good {
+            color: #b8860b;
+            background: rgba(241, 196, 15, 0.20);
+        }
+
+        .skill-level.basic {
+            color: #7a7a7a;
+            background: rgba(120, 120, 120, 0.14);
+        }
+
+        .skill-item::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent-2);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+            transition: transform 0.3s;
+            display: inline-block;
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-3px) scale(1.05);
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: fadeInUp 0.6s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .project-card:nth-child(1) { animation-delay: 0.1s; }
+        .project-card:nth-child(2) { animation-delay: 0.2s; }
+        .project-card:nth-child(3) { animation-delay: 0.3s; }
+        .project-card:nth-child(4) { animation-delay: 0.4s; }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #4a6572, #5b7c8d);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image img,
+        .project-image video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+
+        .project-image iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            transition: transform 0.4s;
+        }
+
+        .project-card:hover .project-image img,
+        .project-card:hover .project-image video,
+        .project-card:hover .project-image iframe {
+            transform: scale(1.05);
+        }
+
+        .project-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+
+        .project-card:hover .project-image::after {
+            opacity: 1;
+        }
+
+        /* Play icon overlay for video */
+        .video-facade {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .video-facade::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.15);
+            transition: background 0.3s;
+        }
+
+        .video-facade:hover::before {
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .video-play {
+            position: relative;
+            z-index: 1;
+            width: 64px;
+            height: 64px;
+            border: none;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.92);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
+            transition: transform 0.25s, background 0.25s;
+        }
+
+        .video-facade:hover .video-play {
+            transform: scale(1.12);
+            background: #fff;
+        }
+
+        .video-play::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 18px solid var(--accent);
+            border-top: 11px solid transparent;
+            border-bottom: 11px solid transparent;
+            margin-left: 4px;
+        }
+
+        .project-image iframe.active-video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            z-index: 3;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 0.8rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .project-link {
+            flex: 1;
+            min-width: 120px;
+            text-align: center;
+            padding: 0.7rem 1.2rem;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+            font-size: 0.9rem;
+        }
+
+        .project-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+        }
+
+        .project-link.secondary {
+            background: white;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+            box-shadow: none;
+        }
+
+        .project-link.secondary:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        .project-info {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .project-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+            line-height: 1.3;
+        }
+
+        .project-role {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(78, 205, 196, 0.1));
+            color: var(--accent);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1.5px solid var(--accent);
+            margin-bottom: 0.5rem;
+            align-self: flex-start;
+        }
+
+        .project-description {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-features {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 1rem 1.2rem;
+            margin: 0.5rem 0;
+            max-height: 200px;
+            overflow-y: auto;
+            border-left: 3px solid var(--accent-2);
+        }
+
+        .project-features::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .project-features::-webkit-scrollbar-track {
+            background: #e9ecef;
+            border-radius: 10px;
+        }
+
+        .project-features::-webkit-scrollbar-thumb {
+            background: var(--accent-2);
+            border-radius: 10px;
+        }
+
+        .project-features::-webkit-scrollbar-thumb:hover {
+            background: var(--accent);
+        }
+
+        .feature-title {
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .feature-title::before {
+            content: '⚡';
+            font-size: 1.1rem;
+        }
+
+        .feature-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .feature-item {
+            color: var(--text-light);
+            font-size: 0.88rem;
+            line-height: 1.5;
+            position: relative;
+            padding-left: 1.5rem;
+            transition: color 0.2s;
+        }
+
+        .feature-item::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent-2);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .feature-item:hover {
+            color: var(--text);
+        }
+
+        .feature-item strong {
+            display: block;
+            color: var(--text);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.15rem;
+        }
+
+        .feature-detail {
+            display: block;
+            font-size: 0.82rem;
+            line-height: 1.6;
+            color: var(--text-light);
+        }
+
+        .feature-detail + .feature-detail {
+            margin-top: 0.25rem;
+        }
+
+        .project-info > p {
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: rgba(102, 126, 234, 0.1);
+            color: #667eea;
+            padding: 0.4rem 1rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Education Section */
+        .education-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid var(--accent-2);
+            padding: 2rem 2.2rem;
+            max-width: 780px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 18px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        .education-main {
+            flex: 1 1 380px;
+        }
+
+        .education-degree {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 0.4rem;
+        }
+
+        .education-school {
+            font-size: 1rem;
+            color: var(--text);
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        .education-faculty {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .education-year {
+            display: inline-block;
+            margin-top: 0.7rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #667eea;
+            background: rgba(102, 126, 234, 0.1);
+            padding: 0.35rem 0.9rem;
+            border-radius: 15px;
+        }
+
+        .education-gpa {
+            text-align: center;
+            flex: 0 0 auto;
+            padding: 1rem 1.6rem;
+            border-radius: 16px;
+            background: rgba(78, 205, 196, 0.12);
+        }
+
+        .education-gpa .gpa-label {
+            display: block;
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-light);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .education-gpa .gpa-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--accent-2);
+            line-height: 1;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-content p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.9rem;
+            margin: 2rem 0 0.5rem;
+        }
+
+        .contact-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            background: var(--card-bg);
+            padding: 0.8rem 1.5rem;
+            border-radius: 40px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+            color: var(--text);
+            text-decoration: none;
+            font-size: 1.02rem;
+            font-weight: 600;
+            transition: transform 0.25s, box-shadow 0.25s, color 0.25s;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+            color: var(--accent);
+        }
+
+        .contact-item svg {
+            flex-shrink: 0;
+            color: var(--accent-2);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .social-link {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: var(--accent);
+            font-size: 1.5rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1.5rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Selection */
+        ::selection {
+            background: var(--accent);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="grain"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">Anuwat Surattanapram</div>
+            <ul>
+                <li><a href="#about">about</a></li>
+                <li><a href="#projects">projects</a></li>
+                <li><a href="#education">education</a></li>
+                <li><a href="#contact">contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Hello I am<br>Anuwat Surattanapram</h1>
+            <h2>Game Developer </h2>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn btn-primary">projects</a>
+                <a href="#contact" class="btn btn-secondary">contact</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-bg">
+        <div class="container">
+            <h2 class="section-title">about me</h2>
+            <div class="about-content">
+               
+                </div>
+                <div class="about-text">
+                    <h3> Game and Application Developer </h3>
+                    <p>
+                        Game and application developer experienced in mobile and PC platforms, proficient in Unity and C#, with expertise in AI game systems, data analytics, 
+                        and real-time databases. Skilled collaborator with experience in team projects and indie development, 
+                        demonstrating strong problem-solving and communication abilities.
+                    </p>
+                    <p>
+                        Passionate about leveraging emerging technologies such as AI tools, cloud integration, and game analytics to create games that are engaging, challenging, and innovative. 
+                        Committed to developing experiences that combine fun gameplay with cutting-edge technology.
+                    </p>
+                    <div class="skills">
+                        <!-- Programming Group -->
+                        <div class="skill-group">
+                            <div class="skill-group-title">Programming</div>
+                            <div class="skill-items">
+                                <div class="skill-item"><span>C#</span><span class="skill-level advanced">Advanced</span></div>
+                                <div class="skill-item"><span>C++</span><span class="skill-level good">Good</span></div>
+                                <div class="skill-item"><span>HTML</span><span class="skill-level basic">Basic</span></div>
+                                <div class="skill-item"><span>CSS</span><span class="skill-level basic">Basic</span></div>
+                                <div class="skill-item"><span>JavaScript</span><span class="skill-level basic">Basic</span></div>
+                                <div class="skill-item"><span>Python</span><span class="skill-level basic">Good</span></div>
+                            </div>
+                        </div>
+
+
+                        <!-- Engine Group -->
+                        <div class="skill-group">
+                            <div class="skill-group-title">Engine</div>
+                            <div class="skill-items">
+                                <div class="skill-item"><span>Unity</span><span class="skill-level advanced">Advanced</span></div>
+                                <div class="skill-item"><span>Unreal</span><span class="skill-level basic">Basic</span></div>
+                                <div class="skill-item"><span>Game Maker</span><span class="skill-level basic">Basic</span></div>
+                            </div>
+                        </div>
+
+
+                        <!-- Tools Group -->
+                        <div class="skill-group">
+                            <div class="skill-group-title">Tools</div>
+                            <div class="skill-items">
+                                <div class="skill-item"><span>GitHub</span><span class="skill-level good">Good</span></div>
+                                <div class="skill-item"><span>Firebase</span><span class="skill-level good">Good</span></div>
+                                <div class="skill-item"><span>Photon Fusion</span><span class="skill-level basic">Basic</span></div>
+                                <div class="skill-item"><span>Unity Cloud</span><span class="skill-level basic">Basic</span></div>
+                            </div>
+                        </div>
+
+                        <!-- AI Tool Group -->
+                        <div class="skill-group">
+                            <div class="skill-group-title">AI Tool</div>
+                            <div class="skill-items">
+                                <div class="skill-item"><span>Claude</span><span class="skill-level good">Good</span></div>
+                                <div class="skill-item"><span>Chat GPT</span><span class="skill-level good">Good</span></div>
+                                <div class="skill-item"><span>Gemini</span><span class="skill-level good">Good</span></div>
+                                <div class="skill-item"><span>Copilot</span><span class="skill-level good">Good</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section-bg" style="padding-top: 2rem;">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+          
+            <div class="projects-grid">
+                <!-- ========== เกมที่ 1 ========== -->
+                <div class="project-card">
+                    <div class="project-image">
+                       
+                        <div class="video-facade" data-id="kUxF4z5Grqg" style="background-image:url(https://i.ytimg.com/vi/kUxF4z5Grqg/hqdefault.jpg);">
+                            <button class="video-play" aria-label="Play video"></button>
+                        </div>
+                      
+                    </div>
+                    <div class="project-info">
+                        <h3>Ferris Adventure | 2025</h3>
+                        <span class="project-role">👨‍💻 Programmer (Team project)</span>
+                        <p class="project-description">Mobile Android online multiplayer RPG game</p>
+                        
+                        <div class="project-features">
+                            <div class="feature-title">What I did</div>
+                            <div class="feature-list">
+                                <div class="feature-item">
+                                    <strong>Online Multiplayer System (Photon Fusion)</strong>
+                                    <span class="feature-detail">Built a real-time multiplayer system with Photon Fusion, syncing player position, HP, state, items, and inventory across clients. Used AI tools (Claude) to assist in designing and implementing the networking architecture.</span>
+                                </div>
+                                <div class="feature-item">
+                                    <strong>Firebase Login &amp; Authentication System (Unity)</strong>
+                                    <span class="feature-detail">Implemented account registration and login using Firebase Authentication, backed by Firebase Realtime Database for persistent player data. Handles the full flow from sign-up to loading/saving player stats, inventory, and progression across sessions.</span>
+                                    <span class="feature-detail">Designed the save/load layer to integrate cleanly with the Photon Fusion networked architecture, preventing client–host data conflicts.</span>
+                                </div>
+                                <div class="feature-item">
+                                    <strong>Inventory System (Unity + Firebase)</strong>
+                                    <span class="feature-detail">Stores items in a 5x5 grid (25 visible slots out of a maximum of 800 total slots), with a stacking system (items of the same type can be stacked together) and quick-slot consumable use.</span>
+                                    <span class="feature-detail">Saves data to Firebase and reloads it on game entry.</span>
+                                </div>
+                                <div class="feature-item">
+                                    <strong>Equipment System</strong>
+                                    <span class="feature-detail">Implemented gear equipping with a set-bonus system — wearing a complete armor set grants additional stat bonuses.</span>
+                                </div>
+                                <div class="feature-item">
+                                    <strong>Enemy AI System (Multiplayer RPG)</strong>
+                                    <span class="feature-detail">Developed the full enemy pipeline from spawning to combat: a 5-state AI state machine (Patrol, Chase, BackOff, Position, Attack) with layered sub-behaviors for natural-feeling movement, a kill-quota stage progression system, and loot drops for items, gold, and EXP.</span>
+                                </div>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+
+                <!-- ========== เกมที่ 2 ========== -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="video-facade" data-id="xtfH4gJOhQk" style="background-image:url(https://i.ytimg.com/vi/xtfH4gJOhQk/hqdefault.jpg);">
+                            <button class="video-play" aria-label="Play video"></button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Delivery Boy | 2024-2025</h3>
+                        <span class="project-role">👨‍💻 Programmer (Team project)</span>
+                        <p class="project-description">PC Side-Scroller 2D game</p>
+                        
+                        <div class="project-features">
+                            <div class="feature-title">What I did</div>
+                            <div class="feature-list">
+                                <div class="feature-item">Player Movement system</div>
+                                <div class="feature-item">Enemy Movement AI</div>
+                                <div class="feature-item">Camera Follow Player mechanics</div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="project-links">
+                            <a href="https://anuwat00.itch.io/delivery-boy" class="project-link" target="_blank">▶ เล่นเกม</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== เกมที่ 3 ========== -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="video-facade" data-id="ml8J_zgqZF8" style="background-image:url(https://i.ytimg.com/vi/ml8J_zgqZF8/hqdefault.jpg);">
+                            <button class="video-play" aria-label="Play video"></button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Borders of Europe | 2024</h3>
+                        <span class="project-role">🎮 Solo project</span>
+                        <p class="project-description">Real-Time Strategy game for PC with 3D </p>
+                        
+                        <div class="project-features">
+                            <div class="feature-title">What I did</div>
+                            <div class="feature-list">
+                                <div class="feature-item">Unit System: drag selection, move/attack, worker gather</div>
+                                <div class="feature-item">Resource System: resource collection and storage, worker AI</div>
+                                <div class="feature-item">Building System: place buildings, produce units</div>
+                                <div class="feature-item">Combat System</div>
+                                <div class="feature-item">Enemy AI: scouting, producing units, attacking</div>
+                                <div class="feature-item">UI System</div>
+                                <div class="feature-item">NavMesh pathfinding</div>
+                                <div class="feature-item">Camera Controller</div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="project-links">
+                            <a href="https://anuwat00.itch.io/rtsprototype" class="project-link" target="_blank">▶ เล่นเกม</a>
+                            <a href="https://github.com/AnuBoss/rts_game" class="project-link secondary" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== เกมที่ 4 ========== -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="video-facade" data-id="kM4BnKcNE3o" style="background-image:url(https://i.ytimg.com/vi/kM4BnKcNE3o/hqdefault.jpg);">
+                            <button class="video-play" aria-label="Play video"></button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>MyRPG</h3>
+                        <span class="project-role">🎮 Solo project</span>
+                        
+                        
+                        
+                        <div class="project-links">
+                            <a href="https://github.com/AnuBoss/rpggame" class="project-link secondary" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section-bg" style="padding-top: 2rem;">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+
+            <div class="education-card">
+                <div class="education-main">
+                    <div class="education-degree">Games and Interactive Media</div>
+                    <div class="education-school">Bangkok University</div>
+                    <div class="education-faculty">School of Information Technology and Innovation</div>
+                    <span class="education-year">2022 – 2025</span>
+                </div>
+                <div class="education-gpa">
+                    <span class="gpa-label">GPA</span>
+                    <span class="gpa-value">3.28</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-bg" style="padding-top: 2rem;">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-content">
+                <p>
+                    Interested in working together or have an exciting project?
+                    Feel free to reach out through any of the channels below.
+                </p>
+                <div class="contact-details">
+                    <a href="tel:0971300276" class="contact-item">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.24.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z"/>
+                        </svg>
+                        097-130-0276
+                    </a>
+                    <a href="mailto:anuwat.bo0603@gmail.com" class="contact-item">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4.24l-8 4.94-8-4.94V6l8 4.94L20 6v2.24z"/>
+                        </svg>
+                        anuwat.bo0603@gmail.com
+                    </a>
+                </div>
+                <div class="cta-buttons">
+                    <a href="mailto:anuwat.bo0603@gmail.com" class="btn btn-primary">Send Email</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/yourusername" class="social-link" target="_blank">
+                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Anuwat Surattanapram.</p>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all project cards
+        document.querySelectorAll('.project-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Add active class to nav links on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section[id]');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('nav a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Click-to-play YouTube facade: load real player only on click
+        document.querySelectorAll('.video-facade').forEach(facade => {
+            facade.addEventListener('click', () => {
+                const id = facade.getAttribute('data-id');
+                const iframe = document.createElement('iframe');
+                iframe.className = 'active-video';
+                iframe.src = 'https://www.youtube-nocookie.com/embed/' + id +
+                    '?autoplay=1&rel=0&modestbranding=1';
+                iframe.title = 'Gameplay video';
+                iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+                iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+                iframe.allowFullscreen = true;
+                facade.replaceWith(iframe);
+            });
+        });
+    </script>
+</body>
+</html>
